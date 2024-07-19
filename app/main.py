@@ -1,27 +1,15 @@
-# from fastapi import FastAPI
-#
-# app = FastAPI()
-#
-#
-# @app.get("/")
-# async def root():
-#     return {"message": "Hello World"}
-#
-#
-# @app.get("/hello/{name}")
-# async def say_hello(name: str):
-#     return {"message": f"Hello {name}"}
-
-import logging
 import asyncio
-from fastapi import FastAPI, Depends
+import logging
+from contextlib import asynccontextmanager
+
+from fastapi import Depends, FastAPI
 from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.crud import get_news_by_days
 from app.database import engine, get_db
 from app.models import Base
 from app.parser import parse_and_save_news
 from app.schemas import News as NewsSchema
-from app.crud import get_news_by_days, create_news
-from contextlib import asynccontextmanager
 
 logging.basicConfig(
     level=logging.DEBUG,
