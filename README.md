@@ -1,4 +1,4 @@
-## NewsAPI FastAPI App
+## NewsAPI App
 
 ### Prerequisites
 
