@@ -15,7 +15,7 @@ config = context.config
 cfg: Settings = get_settings()
 
 # DB URI
-SQLALCHEMY_DATABASE_URL = cfg.db_uri
+SQLALCHEMY_DATABASE_URL = cfg.db_url
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.

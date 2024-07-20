@@ -6,7 +6,7 @@ from settings import Settings
 
 cfg: Settings = Settings()
 
-DATABASE_URL = cfg.db_uri
+DATABASE_URL = cfg.db_url
 
 engine = create_async_engine(DATABASE_URL, echo=cfg.debug)
 SessionLocal = sessionmaker(
