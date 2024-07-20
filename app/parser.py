@@ -1,4 +1,3 @@
-import logging
 from datetime import datetime
 
 import httpx
@@ -59,9 +58,7 @@ def fetch_news():
 async def save_news(db: AsyncSession, news_items: list[NewsCreate]):
     async with AsyncSession(engine) as session:
         for news in news_items:
-            logging.info(f"CHECK TITLE: {news.title}")
             check = await get_news_by_title(session, title=news.title)
-            logging.info(f"CHECK COMPLETED WITH RESULT: {check}")
             if not check:
                 await create_news(db, news)
 
@@ -73,9 +70,7 @@ async def parse_and_save_news():
 
 
 def main():
-    print("MAIN PARSER FUNCTION")
-    items = fetch_news()
-    print(items[5])
+    pass
 
 
 if __name__ == "__main__":

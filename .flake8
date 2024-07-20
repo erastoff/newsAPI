@@ -1,5 +1,5 @@
 [flake8]
 exclude =
-    versions, venv
+    alembic, venv
 
 max-line-length = 120
