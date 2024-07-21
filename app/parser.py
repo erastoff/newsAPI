@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import List
 
 import httpx
 from bs4 import BeautifulSoup
@@ -11,7 +12,7 @@ from app.schemas import NewsCreate
 URL = "https://mosday.ru/news/tags.php?metro"
 
 
-def fetch_news():
+def fetch_news() -> List[NewsCreate]:
     response = httpx.get(URL)
     soup = BeautifulSoup(response.text, "html.parser")
     news_items = []
