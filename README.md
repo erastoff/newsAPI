@@ -60,7 +60,7 @@ docker-compose down --volumes
 - **.env**: Environment variables for configuring the database connection.
 
 ### Endpoints
-- **GET /metro/news?day=5**: Retrieves news articles from the past <int> days.
+- **GET /metro/news?day=`int`**: Retrieves news articles from the past `int` days.
 - **Request**
 ```http request
 http://0.0.0.0:8000/metro/news?day=5
